@@ -1,0 +1,68 @@
+{
+    "torch":{
+        "device":"cuda",
+        "seed":42,
+        "precision":"medium",
+        "mix_precision16":true
+    },
+
+    "dataset":{
+        "dataset_name":"wpc10",
+        "data_aug":true,
+        "traininfo":"configs/wpc/5/train.xlsx",
+        "vailinfo":"configs/wpc/5/vail.xlsx",
+        "train_mos_scale":100,
+        "vail_mos_scale":100,
+        "patch_num":32,
+        "train_patch_num":8,
+        "vail_patch_num":32,
+
+        "pc_path":"/home/dell/kywxq/datasets/wpc10/32x8192",
+
+        "pic_path":"/home/dell/kywxq/datasets/wpc10/32x8192_pic_201",
+
+        "projection_num":1,
+        "random": true,
+        "data_normalization":false
+
+    },
+    "hyperparameters":{
+        "dev_mode":false,
+        "test_mode":false,
+        "continue_train":false,
+        "limit_batchs":999999999,
+        "val_frequency":1,
+
+        "model_name":"multi",
+        "pre_train":"all",
+        "load_ckpt":false,
+        "ckpt_path":"logs\\lightning_logs\\version_314\\checkpoints\\last.ckpt",
+
+        "batch_size":4,
+        "num_epochs":100,
+        "optimizer_param": {
+            "learning_rate": 5e-05,
+            "weight_decay": 1e-05,
+            "lr_decay_step_size": 5,
+            "lr_decay_gamma": 0.9
+        },
+        
+
+        "momentum":0.9,
+        "gamma":0.1,
+        "step_size":30,
+        "num_workers":4,
+        "pin_memory":true,
+        "shuffle":true,
+
+
+        "model": {
+            "transformer_dropout": 0.1,
+            "transformer_nhead": 4,
+            "embedding_size": 128,
+            "embedding_dim": 1024,
+            "l_w_embedding": 0.5,
+            "l_w_commitment": 0.8
+        }
+    }
+}

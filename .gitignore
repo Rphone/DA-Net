@@ -1,0 +1,10 @@
+tmps/
+.vscode/
+*.pyc
+~*
+req.txt
+logs/
+checks/
+docs/
+datas/
+scripts/
